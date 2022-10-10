@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="container">
+    <div class="header__wrapper">
+        <div class="header__logo">
+            <img src="/static/images/logo.svg" alt="logo">
+        </div>
+        <div class="header__info">
+            <nav class="header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a class="menu__link" href="#">Blog</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Register</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Login </a></li>
+                </ul>
+            </nav>
+            <div class="header__box">
+                <form class="header__box-form" action="select" method="post">
+                    <p><select class="header__box-select" size="1" multiple name="language">
+                        <option value="Eng">Eng</option>
+                        <option value="Ru">Ru</option>
+                    </select></p>
+                </form>
+                <img class="header__box-img" src="/static/images/header-icon.svg" alt="bookmarks">
+            </div>
+        </div>
+    </div>
+
+</header>
+{% block body %} {% endblock %}
+<footer class="footer">
+    <div class="footer__wrapper container">
+        <div class="footer__info">
+            <div class="footer__info-block">
+                <div class="footer__info-title">Our Policies</div>
+                <div class="footer__info-text">
+                    <span>Terms and conditions</span>
+                    <span>Website usage agreement</span>
+                    <span>Usage license</span>
+                </div>
+            </div>
+            <div class="footer__info-block">
+                <div class="footer__info-title">Our Sites</div>
+                <div class="footer__info-text">
+                    <span>Regionimages.com</span>
+                    <span>Purebudget.com</span>
+                </div>
+            </div>
+            <div class="footer__info-block">
+                <div class="footer__info-title">Imageselect</div>
+                <div class="footer__info-text">
+                    <span>Contact Us</span>
+                    <span>About Us</span>
+                </div>
+            </div>
+            <div class="footer__info-block">
+                <div class="footer__info-title">Images</div>
+                <div class="footer__info-text">
+                    <span>Right Managed Images</span>
+                    <span>Royalty Free Images</span>
+                    <span>Editorial Images</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__image">
+            <img class="footer__image-item" src="/static/images/Mask-icon.svg" alt="General Data">
+            <div class="footer__image-inner">
+                <img class="footer__image-icon" src="/static/images/twitter-icon.svg" alt="twitter">
+                <img class="footer__image-icon" src="/static/images/instagramm-icon.svg" alt="instagramm">
+                <img class="footer__image-icon" src="/static/images/pinterest-icon.svg" alt="pinterest">
+                <img class="footer__image-icon" src="/static/images/facebook-icon.svg" alt="facebook">
+            </div>
+        </div>
+    </div>
+    <div class="footer__pay container">
+        <img class="footer__pay-icon" src="/static/images/pay_1-icon.svg" alt="pay">
+        <img class="footer__pay-icon" src="/static/images/pay_2-icon.svg" alt="pay">
+        <img class="footer__pay-icon" src="/static/images/pay_3-icon.svg" alt="pay">
+        <img class="footer__pay-icon" src="/static/images/pay_4-icon.svg" alt="pay">
+        <img class="footer__pay-icon" src="/static/images/pay_5-icon.svg" alt="pay">
+        <img class="footer__pay-icon" src="/static/images/pay_6-icon.svg" alt="pay">
+    </div>
+    <div class="footer__bottom">
+        <div class="footer__bottom-wrapper container">
+            <span class="footer__bottom-item ">Imageselect, your image partner for all your stock photos including royality-free, rights managed images, editorial images and microstock</span>
+            <span class="footer__bottom-item container">© 2021 ImageSelect</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
