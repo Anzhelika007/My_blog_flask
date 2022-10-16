@@ -1,10 +1,20 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'My_blog.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'my key'
 db = SQLAlchemy(app)
+
+
+def create_app():
+    app = Flask(__name__)
+    db.init_app(app)
+    return app
 
 
 class Article(db.Model):
@@ -18,22 +28,22 @@ class Article(db.Model):
     cover = db.Column(db.String(50), nullable=False, default='default.jpg')
 
     def __repr__(self):
-        return '<Article %r>' % self.id
+        return "<Article %r>" % self.id
 
 
-class Category(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), unique=True, nullable=False)
-
-    def __repr__(self):
-        return '<Category %r>' % self.id
-
-
-class Comment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    author = db.Column(db.String(100), nullable=False)
-    body = db.Column(db.String(300), nullable=False)
-    created_on = db.Column(db.DateTime, default=datetime.utcnow)
+# class Category(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(30), unique=True, nullable=False)
+#
+#     def __repr__(self):
+#         return '<Category %r>' % self.id
+#
+#
+# class Comment(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     author = db.Column(db.String(100), nullable=False)
+#     body = db.Column(db.String(300), nullable=False)
+#     created_on = db.Column(db.DateTime, default=datetime.utcnow)
 
 
 @app.route('/')
