@@ -5,6 +5,7 @@ html{
 *::after,
 ::before{
     box-sizing: inherit;
+    margin: 0;
 }
 a{
     text-decoration: none;
@@ -50,7 +51,7 @@ body{
     line-height: 18px;
     display:flex;
     justify-content: space-between;
-    width: 325px;
+    width: 450px;
 }
 .header__box{
     display:flex;
