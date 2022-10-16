@@ -231,6 +231,7 @@ body{
 }
 .post__card{
     max-width: 445px;
+    min-width: 300px;
     position: relative;
     margin-bottom: 80px;
 }
@@ -274,4 +275,32 @@ body{
     border: none;
     color: #8A8A8A;
     height: 27px;
+}
+
+/*--------about page--------*/
+.search__pages{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.search_pages-item{
+    justify-content: flex-start;
+    min-width: 85%;
+    padding-top: 0;
+}
+.search_pages-input{
+    min-width: 85%;
+}
+.search__photo{
+    display: flex;
+}
+.search__photo{
+    height: 20px;
+    align-self: center;
+
+}
+.search__photo-text{
+    white-space: nowrap;
+    line-height: 20px;
 }
