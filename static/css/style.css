@@ -65,6 +65,10 @@ body{
     width: 16px;
     height: 19px;
 }
+.footer{
+    background: #FBFBFB;
+    padding-top: 20px;
+}
 .footer__wrapper{
     display:flex;
     justify-content:space-between;
@@ -72,7 +76,6 @@ body{
 }
 .footer__info{
     display:flex;
-    padding-top: 20px;
 }
 .footer__info-block{
     margin-right:50px;
